@@ -7,9 +7,9 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Maha Personal cv/resume template for professional and personal website." />
+        <meta name="description" content="Binil Personal cv/resume template for professional and personal website." />
         <meta name="keywords" content="creative, cv, designer,  online cv, online resume, powerful portfolio, professional, professional resume, responsive, resume, vcard " />
-        <meta name="developer" content="Md. Siful Islam">
+        <meta name="developer" content="Binil Eldho Roy">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                 
         <!-- FAV AND ICONS   -->
@@ -806,19 +806,22 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                    <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                                    <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="">
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <input name="name" class="contact-name form-control" id="name" type="text" placeholder="Full Name" required>
+                                                <input name="name" class="contact-name form-control" id="name" type="text" onkeydown="ValidateName()" placeholder="Full Name" required>
+                                                <div style="color: red;" id="nameError"></div>
                                             </div>
                 
                                             <div class="col-sm-12">
-                                                <input name="name" class="contact-email form-control" id="L_name" type="text" placeholder="Phone Number" required>
+                                                <input name="phnumber" class="contact-email form-control" id="phnumber" type="text" onkeydown="ValidatePhone()" placeholder="Phone Number" required>
+                                                <div style="color: red;" id="phError"></div>
                                             </div>
                 
                                             <div class="col-sm-12">
-                                                <input name="name" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                                                <input name="name" class="contact-subject form-control" id="email" type="email" onkeydown="ValidateEmail()" placeholder="Your Email" required>
+                                                <div style="color: red;" id="lblError"></div>
                                             </div>
                 
                                             <div class="col-sm-12">
@@ -895,3 +898,39 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+    function ValidateEmail() {
+        var email = document.getElementById("email").value;
+        var lblError = document.getElementById("lblError");
+        lblError.innerHTML = "";
+        var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        if (!expr.test(email)) {
+            lblError.innerHTML = "Invalid email address.";
+        }
+    }
+
+    function ValidatePhone() {
+        var ph = document.getElementById("phnumber").value;
+        var lblError = document.getElementById("phError");
+        lblError.innerHTML = "";
+        var expr =  /^[0-9]{10}$/;
+        
+        if (!expr.test(ph)) {
+            lblError.innerHTML = "Required 10 Digits";  
+        }
+    }
+
+    function ValidateName() {
+        var name = document.getElementById("name").value;
+        var lblError = document.getElementById("nameError");
+        lblError.innerHTML = "";
+        var expr = /^[a-zA-Z]{3,}$/;
+        
+        if (!expr.test(name)) {
+            lblError.innerHTML = "Atleast 4 Charactor";  
+        }
+    }
+
+
+</script>

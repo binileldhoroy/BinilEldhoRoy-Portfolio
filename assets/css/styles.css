@@ -2014,118 +2014,7 @@ li .fa {
        Pricing
     ==============
 */
-.mh-pricing .mh-pricing {
-  padding: 30px 0;
-  text-align: center;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  margin-bottom: 30px;
-  border-radius: 4px;
-}
 
-.mh-pricing .mh-pricing:hover {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.mh-pricing .mh-pricing:hover .btn {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  background-color: #0ab69a;
-}
-
-.mh-pricing .mh-pricing .fa {
-  font-size: 30px;
-  line-height: 36px;
-  margin-bottom: 20px;
-  color: #7af8e4;
-}
-
-.mh-pricing .mh-pricing h4 {
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
-
-.mh-pricing .mh-pricing h5 {
-  font-size: 36px;
-  line-height: 40px;
-  color: #0bceaf;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.mh-pricing .mh-pricing span {
-  opacity: 0.8;
-}
-
-.mh-pricing .mh-pricing ul {
-  margin: 30px 0;
-}
-
-.mh-pricing .mh-pricing ul li {
-  margin: 2px 0;
-}
-
-.mh-pricing .mh-pricing .btn {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-/*
-    ==============
-       BLOG
-    ==============
-*/
-.mh-blog .mh-blog-item {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  border-radius: 10px 10px 0px 0px;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  margin-bottom: 30px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.mh-blog .mh-blog-item:hover {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.mh-blog .mh-blog-item .blog-inner {
-  padding: 0px 20px;
-  padding-bottom: 30px;
-}
-
-.mh-blog .mh-blog-item .blog-inner h2 a {
-  color: #fff;
-}
-
-.mh-blog .mh-blog-item .blog-inner a {
-  color: #0bceaf;
-}
-
-.mh-blog .mh-blog-item img {
-  margin-bottom: 30px;
-}
-
-.mh-blog .mh-blog-item h2 {
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.mh-blog .mh-blog-item h2 a {
-  color: #0bceaf;
-}
-
-.mh-blog .mh-blog-item h2 a:hover {
-  color: #0ac4a7;
-}
 
 /*
     ==============
@@ -3881,3 +3770,7 @@ BLOG Pagination
   margin-top: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
+
+.error{
+  color: rgb(235, 70, 70);
+}
