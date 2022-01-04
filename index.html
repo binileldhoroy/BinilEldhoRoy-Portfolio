@@ -44,6 +44,9 @@
         <link rel="alternate stylesheet" href="assets/css/colors/purple.css" title="purple"> 
         <link rel="alternate stylesheet" href="assets/css/colors/slate.css" title="slate">
         <link rel="alternate stylesheet" href="assets/css/colors/yellow.css" title="yellow">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         
     </head>
     <body class="dark-vertion home-video black-bg">
@@ -802,36 +805,36 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                    <form id="submit-form" class="single-form quate-form wow fadeInUp" >
-                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div style="color: red;" id="name_error"></div>
-                                                <input name="name" class="contact-name form-control" id="name" type="text" onkeyup="nameValidate()" placeholder="Full Name" >
-                                            </div>
-                
-                                            <div class="col-sm-12">
-                                                <div style="color: red;" id="mobile_error"></div>
-                                                <input name="phnumber" class="contact-email form-control" id="phnumber" type="text" onkeyup="mobileValidate()" placeholder="Phone Number" >
-                                            </div>
-                
-                                            <div class="col-sm-12">
-                                                <div style="color: red;" id="email_error"></div>
-                                                <input name="name" class="contact-subject form-control" id="email" type="email" onkeyup="emailValidate()" placeholder="Your Email" >
-                                            </div>
-                
-                                            <div class="col-sm-12">
-                                                <div style="color: red;" id="message_error"></div>
-                                                <textarea class="contact-message" id="msg" rows="6" placeholder="Your Message" onkeyup="messageValidate()" ></textarea>
-                                            </div>
-                                            
-                                            <!-- Subject Button -->
-                                            <div class="btn-form col-sm-12">
-                                                <button type="submit" class="btn btn-fill btn-block"  onclick="formValidate()" >Send Message</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                    <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <form id="form-submit" class="single-form quate-form wow fadeInUp" >
+                            <div id="output_message" class="h3 text-center hidden"></div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div style="color: red;" id="errormsg"></div>
+                                    <input name="name" onkeyup="nameValidate()" class="contact-name form-control name" id="name" type="text" placeholder="Full Name" >
+                                </div>
+    
+                                <div class="col-sm-12">
+                                    <div style="color: red;" id="errormsg2"></div>
+                                    <input name="mob" onkeyup="mobileValidate()" class="contact-email form-control number" id="number"  placeholder="Phone Number" >
+                                </div>
+    
+                                <div class="col-sm-12">
+                                    <div style="color: red;" id="errormsg1"></div>
+                                    <input name="email" onkeyup="emailValidate()" class="contact-subject form-control email" id="email" type="email" placeholder="Your Email" >
+                                </div>
+    
+                                <div class="col-sm-12">
+                                    <div style="color: red;" id="errormsg3"></div>
+                                    <textarea class="contact-message message" onkeyup="messageValidate()" id="msg" name="msg" rows="6" placeholder="Your Message" ></textarea>
+                                </div>
+                                
+                                <!-- Subject Button -->
+                                <div class="btn-form col-sm-12" id="btn-div">
+                                    <button type="button"  class="btn btn-fill btn-block" onclick="validate()"  >Send Message</button>
+                                </div>
+                            </div>
+                        </form>
                                 </div>
                                 <div class="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                                     <div class="row">
@@ -891,127 +894,82 @@
     <script src="assets/plugins/js/isotope.pkgd.js"></script>
     <script src="assets/plugins/js/packery-mode.pkgd.js"></script>
     <!-- Custom Scripts-->
-    <script src="assets/js/map-init.js"></script>
-    <script src="assets/js/custom-scripts.js"></script>
     <!-- <script src="assets/js/validation.js"></script> -->
+    <script src="assets/js/custom-scripts.js"></script>
+    <script src="assets/js/map-init.js"></script>x
 
-</body>
-</html>
+
 
 <script type="text/javascript">
-//     function formValidate(){
+ function validate(){
 
-//     if(nameValidate()==true && emailValidate()==true && mobileValidate()==true && messageValidate()==true){
+if(nameValidate()==true || emailValidate()==true || mobileValidate()==true || messageValidate()==true){
 
-//     $.ajax({
-//         url:"https://script.google.com/macros/s/AKfycbywPZqij1MeNkN3jtGfsJImYuLAfwAAWbLGmsbk0LkdvZGwghcgwSjGer9FjCPZN9_grg/exec",
-//         data:$("#submit-form").serialize(),
-//         method:"post",
-//         success:function (response){
-//             alert("Form submitted successfully")
-//             window.location.reload()
-//             //window.location.href="https://google.com"
-//         },
-//         error:function (err){
-//             alert("Please enter the values")
+    $.ajax({
+        url:"https://script.google.com/macros/s/AKfycbwJRIhH8k56Dv28Rk-8DnGw42K8EPbL1cn9zyNm2HW9C9JSIfABDPGT03uG28gqm64L7w/exec",
+        data:$("#form-submit").serialize(),
+        method:"post",
+        success:function(response){
+            alert("Form submitted successfully")
+            window.location.reload()
+            //window.location.href="https://google.com"
+        },
+        error:function (err){
+            alert("Please enter the values")
 
-//         }
-//     })
+        }
+    })
 
-//   }
-// }
-
-
-
-
-function formValidate(){
-
-    if(nameValidate()==true && emailValidate()==true && mobileValidate()==true && messageValidate()==true){
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbywPZqij1MeNkN3jtGfsJImYuLAfwAAWbLGmsbk0LkdvZGwghcgwSjGer9FjCPZN9_grg/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
+  }else{
+    alert("Please enter Deatiles")
     
-                }
-            })
-        })
-    }
-
-    
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function nameValidate(){
   var varname = $('#name').val();
-  var pattern = /[a-zA-Z\s]+/;
+  var pattern = /^[a-zA-Z\\s]/;
 
   if(varname==" "){
-    $('#name_error').html("Name is mandatory");
+    $('#errormsg').html("Name is mandatory");
     return false;
   }else if(varname.match(pattern)){
-    $('#name_error').html("");
+    $('#errormsg').html("");
     return true;
   }else{
-    $('#name_error').html("Enter correct name");
+    $('#errormsg').html("Enter correct name");
     return false;
   }
 }
 
 function emailValidate(){
   var varEmail = $('#email').val();
-  var emailPattern = /^[a-zA-Z0-9.!#$%&+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+  var emailPattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
   if(varEmail==""){
-    $('#email_error').html("Email is mandatory");
+    $('#errormsg1').html("Email is mandatory");
     return false;
   }else if(varEmail.match(emailPattern)){
-    $('#email_error').html("");
+    $('#errormsg1').html("");
     return true;
   }else{
-    $('#email_error').html("Enter correct Email");
+    $('#errormsg1').html("Enter correct Email");
     return false;
   }
 
 }
 
 function mobileValidate(){
-  var varMobile = $('#phnumber').val();
+  var varMobile = $('#number').val();
   var mobilePattern = /^\d{10}$/;
 
-  if(varMobile==""){
-    $('#mobile_error').html("Contact number is mandatory");
-    return false;
-  }else if(varMobile.match(mobilePattern)){
-    $('#mobile_error').html("");
-    return true;
-  }
-  else if(varMobile.length<10 ||varMobile.length>=10){
-    $('#mobile_error').html("Number should be 10 digits");
+  if(varMobile.length<10 ||varMobile.length>10){
+    $('#errormsg2').html("Number should be 10 digits");
+  
   }
   else{
-    $('#mobile_error').html("Enter valid Contact number");
+    $('#errormsg2').html("");
     return false;
   }
 }
@@ -1020,13 +978,20 @@ function messageValidate(){
   var varMessage = $('#msg').val();
 
   if(varMessage==""){
-    $('#message_error').html("Enter something please");
+    $('#errormsg3').html("Enter something please");
     return false;
   }else {
-    $('#message_error').html("");
+    $('#errormsg3').html("");
     return true;
   }
 }
-  
-
+$('input[name="mob"]').keyup(function (e) {
+  if (/\D/g.test(this.value)) {
+    // Filter non-digits from input value.
+    this.value = this.value.replace(/\D/g,"");
+  }
+});
 </script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+</body>
+</html>
